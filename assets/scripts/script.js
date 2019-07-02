@@ -1,32 +1,15 @@
-$(document).ready(function() {
-	var scorpion = $('.character-name1');
-	var subzero = $('.character-name2');
-	var field = $('.image-container');
-
-	scorpion.click(function() {
-		setTimeout(field.addClass('-animated'), 1000)
-		showScorpion();
-
-
-	})
-	subzero.click(function() {
-		showSubzero();
-		setTimeout(field.addClass('-animated'), 1000)
-	})
-	
+let scorpion = document.getElementsByClassName('character-name1')[0];
+let subzero =  document.getElementsByClassName('character-name2')[0];
+let field =  document.getElementsByClassName('image-container')[0];
 
 
 
 
-
-	function showScorpion() {
-    field.removeClass('-subzero');
-	field.addClass('-scorpion');
-
-}
-
-	function showSubzero() {
-  	field.addClass('-subzero');
-	field.removeClass('-scorpion');
-}
-});
+scorpion.onclick = () => {
+	field.classList.remove('-subzero');
+	field.classList.add('-scorpion');
+};
+subzero.onclick = () => {
+	field.classList.remove('-scorpion');
+	field.classList.add('-subzero');
+};
